@@ -17,15 +17,7 @@ export default async function HomePage() {
   return (
     <main>
       <H1>Home</H1>
-      {session ? (
-        <>
-          <P>Logged in as {session.user.email}</P>
-        </>
-      ) : (
-        <>
-          <LoginButton />
-        </>
-      )}
+      <P>Logged in as {session?.user.email}</P>
     </main>
   );
 }
