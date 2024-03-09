@@ -70,3 +70,16 @@ export const authOptions: NextAuthOptions = {
  * @see https://next-auth.js.org/configuration/nextjs
  */
 export const getServerAuthSession = () => getServerSession(authOptions);
+
+/**
+ * Returns whether the user is logged in or not.
+ * 
+ * This internally calls `getServerAuthSession` and casts the result to boolean.
+ * 
+ * @returns Whether the user is logged in
+ */
+export async function isLoggedIn(): Promise<Boolean> {
+  const session = await getServerAuthSession();
+
+  return !!(session);
+}
