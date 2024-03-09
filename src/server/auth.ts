@@ -78,7 +78,7 @@ export const getServerAuthSession = () => getServerSession(authOptions);
  * 
  * @returns Whether the user is logged in
  */
-export async function isLoggedIn(): Promise<Boolean> {
+export async function isLoggedIn(): Promise<boolean> {
   const session = await getServerAuthSession();
 
   return !!(session);
