@@ -43,39 +43,6 @@ export function Blockquote({ children, className }: { children: React.ReactNode,
   );
 }
 
-export function Table({ children, className }: { children: React.ReactNode, className?: string }) {
-  return (
-    <div className={`my-6 w-full overflow-y-auto ${className ?? ""}`}>
-      <table className={`w-full`}>
-        {children}
-      </table>
-    </div>
-  );
-}
-
-export function TableHead({ children, className }: { children: React.ReactNode, className?: string }) {
-    return <thead>{children}</thead>;
-}
-
-export function TableBody({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <tbody>{children}</tbody>;
-}
-
-export function TableCell({ children, className }: { children: React.ReactNode, className?: string }) {
-    return <td className={`border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right ${className ?? ""}`}>{children}</td>
-}
-
-export function TableRow({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <tr className={`m-0 border-t p-0 even:bg-muted ${className ?? ""}`}>{children}</tr>;
-}
-
-export function TableHeader({ children, className }: { children: React.ReactNode, className?: string }) {
-  return (
-    <th className={`border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right ${className ?? ""}`}>
-      {children}
-    </th>
-  );
-}
 
 export function List({ children, className }: { children: React.ReactNode, className?: string }) {
   return <ul className={`my-6 ml-6 list-disc [&>li]:mt-2 ${className ?? ""}`}>{children}</ul>;
