@@ -12,6 +12,7 @@ import {
   VFlex,
 } from "@ui";
 import { useEffect, useState } from "react";
+import { createPatient } from "~/server/patient";
 
 export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setFormShow: (show: boolean) => void }) {
   const [firstName, setFirstName] = useState("");
@@ -19,8 +20,9 @@ export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setF
   const [mobileNumber, setMobileNumber] = useState("");
   const [age, setAge] = useState(0);
 
-  function create() {
-    console.log(firstName, lastName, mobileNumber, age);
+  async function create() {
+    let patient = await createPatient({ firstName, lastName, mobileNumber, age });
+    console.log(patient);
     setFormShow(false);
   }
 
