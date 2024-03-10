@@ -6,3 +6,5 @@ export * from './input'
 export * from './menubar';
 export * from './mode-toggle';
 export * from './typography';
+export * from './table';
+export * from './data-table'
