@@ -21,6 +21,16 @@ model Patient {
     lastName          String
     mobileNumber      String
     age               Int
+    appointments      Appointment[]
+}
+
+model Appointment {
+    id                Int @id @default(autoincrement())
+    patient           Patient @relation(fields: [patientId], references: [id])
+    patientId         Int
+
+    startTime         DateTime
+    endTime           DateTime
 }
 
 // Necessary for Next auth
