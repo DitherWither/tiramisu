@@ -6,7 +6,7 @@ import { ThemeProvider } from "~/components/theme-provider";
 import { SiteHeader } from "~/components/site-header";
 import { getServerAuthSession } from "~/server/auth";
 import { LoginButton } from "~/components/auth/login-button";
-import { HFlex } from "@ui";
+import { VFlex } from "@ui";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -49,9 +49,9 @@ export default async function RootLayout({
             </>
           ) : (
             <>
-              <HFlex className="min-h-screen items-center justify-center">
+              <VFlex className="min-h-screen items-center justify-center">
                 <LoginButton />
-              </HFlex>
+              </VFlex>
             </>
           )}
         </ThemeProvider>
