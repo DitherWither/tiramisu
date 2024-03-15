@@ -7,9 +7,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  HFlex,
-  Input,
   VFlex,
+  Input,
+  HFlex,
 } from "@ui";
 import { useEffect, useState } from "react";
 import { createPatient } from "~/server/patient";
@@ -19,7 +19,7 @@ export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setF
   const [lastName, setLastName] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [age, setAge] = useState(0);
-
+ 
   async function create() {
     let patient = await createPatient({ firstName, lastName, mobileNumber, age });
     console.log(patient);
@@ -32,8 +32,8 @@ export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setF
         <DialogHeader>
           <DialogTitle>New Patient</DialogTitle>
         </DialogHeader>
-        <HFlex className="gap-4">
-          <VFlex className="gap-4">
+        <VFlex className="gap-4">
+          <HFlex className="gap-4">
             <Input
               placeholder="First Name"
               onKeyDown={(e) =>
@@ -46,7 +46,7 @@ export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setF
                 setLastName((e.target as HTMLInputElement).value)
               }
             />
-          </VFlex>
+          </HFlex>
           <Input
             placeholder="Mobile Number"
             type="tel"
@@ -61,7 +61,7 @@ export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setF
               setAge(+(e.target as HTMLInputElement).value)
             }
           />
-        </HFlex>
+        </VFlex>
         <DialogFooter>
           <Button onClick={create}>New Patient</Button>
         </DialogFooter>

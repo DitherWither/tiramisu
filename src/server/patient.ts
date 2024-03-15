@@ -5,6 +5,11 @@ import { db } from "./db";
 
 export type { Patient }
 
+
+export async function getAllPatients(): Promise<Patient[]> {
+    return await db.patient.findMany();
+}
+
 export async function createPatient(
     { firstName, lastName, mobileNumber, age }: { firstName: string, lastName: string, mobileNumber: string, age: number }
 ): Promise<Patient> {
@@ -17,8 +22,4 @@ export async function createPatient(
             age
         }
     });
-}
-
-export async function getAllPatients(): Promise<Patient[]> {
-    return await db.patient.findMany();
 }
