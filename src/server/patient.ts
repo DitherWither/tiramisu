@@ -1,6 +1,6 @@
 "use server";
 
-import { Patient } from "@prisma/client";
+import { type Patient } from "@prisma/client";
 import { db } from "./db";
 
 export type { Patient }

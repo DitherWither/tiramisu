@@ -1,1 +1,1 @@
-export const SITE_NAME: string = "Tiramisu";
+export const SITE_NAME = "Tiramisu";

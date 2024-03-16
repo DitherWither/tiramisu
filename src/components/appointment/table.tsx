@@ -1,9 +1,8 @@
 "use client";
 
-import { ColumnDef } from "@tanstack/react-table";
-import { Appointment } from "@prisma/client";
+import { type ColumnDef } from "@tanstack/react-table";
 import { DataTable, DataTableColumnHeader, createColumn } from "@ui";
-import { AppointmentWithPatient } from "~/server/appointment";
+import { type AppointmentWithPatient } from "~/server/appointment";
 
 export function AppointmentTable({
   appointments,

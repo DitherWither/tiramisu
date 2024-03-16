@@ -1,84 +1,208 @@
 // Various typography components
 // Some of these are just wrappers for now, but might get custom styling later
 
-export function H1({ children, className }: { children: React.ReactNode, className?: string }) {
+import { cn } from "~/lib/utils";
+
+export function H1({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <h1 className={`scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className ?? ""}`}>
+    <h1
+      className={cn([
+        "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+        className,
+      ])}
+    >
       {children}
     </h1>
   );
 }
 
-export function H2({ children, className }: { children: React.ReactNode, className?: string }) {
+export function H2({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <h2 className={`scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 ${className ?? ""}`}>
+    <h2
+      className={cn([
+        "first:mt-0cn scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight",
+        className,
+      ])}
+    >
       {children}
     </h2>
   );
 }
 
-export function H3({ children, className }: { children: React.ReactNode, className?: string }) {
+export function H3({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <h3 className={`scroll-m-20 text-2xl font-semibold tracking-tight ${className ?? ""}`}>
+    <h3
+      className={cn([
+        "tracking-tightcn scroll-m-20 text-2xl font-semibold",
+        className,
+      ])}
+    >
       {children}
     </h3>
   );
 }
 
-export function H4({ children, className }: { children: React.ReactNode, className?: string }) {
+export function H4({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <h4 className={`scroll-m-20 text-xl font-semibold tracking-tight ${className ?? ""}`}>
+    <h4
+      className={cn([
+        "scroll-m-20 text-xl font-semibold tracking-tight",
+        className,
+      ])}
+    >
       {children}
     </h4>
   );
 }
 
-export function P({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <p className={`leading-7 [&:not(:first-child)]:mt-6 ${className ?? ""}`}>{children}</p>;
-}
-
-export function Blockquote({ children, className }: { children: React.ReactNode, className?: string }) {
+export function P({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <blockquote className={`mt-6 border-l-2 pl-6 italic ${className ?? ""}`}>{children}</blockquote>
+    <p className={cn(["leading-7 [&:not(:first-child)]:mt-6", className])}>
+      {children}
+    </p>
   );
 }
 
+export function Blockquote({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <blockquote className={cn(["mt-6 border-l-2 pl-6 italic", className])}>
+      {children}
+    </blockquote>
+  );
+}
 
-export function List({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <ul className={`my-6 ml-6 list-disc [&>li]:mt-2 ${className ?? ""}`}>{children}</ul>;
+export function List({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <ul className={cn(["my-6 ml-6 list-disc [&>li]:mt-2", className])}>
+      {children}
+    </ul>
+  );
 }
 
 // Currently just a wrapper
-export function ListItem({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <li>{children}</li>;
+export function ListItem({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return <li className={className}>{children}</li>;
 }
 
 export function TypographyInlineCode({
-  children, className
+  children,
+  className,
 }: {
-  children: React.ReactNode, className?: string;
+  children: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <code className={`relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold ${className ?? ""}`}>
+    <code
+      className={cn([
+        "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
+        className,
+      ])}
+    >
       {children}
     </code>
   );
 }
 
-export function Lead({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <p className={`text-xl text-muted-foreground ${className ?? ""}`}>{children}</p>;
-}
-
-export function Large({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <div className={`text-lg font-semibold ${className ?? ""}`}> {children}</div>;
-}
-
-export function Small({ children, className }: { children: React.ReactNode, className?: string }) {
+export function Lead({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <small className={`text-sm font-medium leading-none ${className ?? ""}`}> {children}</small>
+    <p className={cn(["text-xl text-muted-foreground", className])}>
+      {children}
+    </p>
   );
 }
 
-export function Muted({ children, className }: { children: React.ReactNode, className?: string }) {
-  return <p className={`text-sm text-muted-foreground ${className ?? ""}`}> {children}</p>;
+export function Large({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={cn(["text-lg font-semibold", className])}> {children}</div>
+  );
+}
+
+export function Small({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <small className={cn(["text-sm font-medium leading-none", className])}>
+      {" "}
+      {children}
+    </small>
+  );
+}
+
+export function Muted({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <p className={cn(["text-sm text-muted-foreground", className])}>
+      {" "}
+      {children}
+    </p>
+  );
 }
