@@ -11,7 +11,7 @@ import {
   Input,
   HFlex,
 } from "@ui";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createPatient } from "~/server/patient";
 
 export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setFormShow: (show: boolean) => void }) {
@@ -21,7 +21,7 @@ export function PatientForm({ formShow, setFormShow }: { formShow: boolean, setF
   const [age, setAge] = useState(0);
  
   async function create() {
-    let patient = await createPatient({ firstName, lastName, mobileNumber, age });
+    const patient = await createPatient({ firstName, lastName, mobileNumber, age });
     console.log(patient);
     setFormShow(false);
   }

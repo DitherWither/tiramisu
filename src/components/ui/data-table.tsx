@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  Column,
-  ColumnDef,
-  SortingState,
+  type Column,
+  type ColumnDef,
+  type SortingState,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,

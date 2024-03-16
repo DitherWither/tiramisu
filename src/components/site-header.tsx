@@ -1,6 +1,5 @@
 "use client";
 
-import { H1 } from "./ui/typography";
 import {
   Menubar,
   MenubarContent,
@@ -10,7 +9,7 @@ import {
   MenubarTrigger,
   HFlex,
 } from "@ui";
-import { signIn, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { SITE_NAME } from "~/globals";
 import { useEffect, useState } from "react";
 import { PatientForm } from "./patient/form";

@@ -1,7 +1,7 @@
 "use client";
 
-import { ColumnDef } from "@tanstack/react-table";
-import { Patient } from "~/server/patient";
+import { type ColumnDef } from "@tanstack/react-table";
+import { type Patient } from "~/server/patient";
 import { DataTable, DataTableColumnHeader, createColumn } from "@ui";
 
 export function PatientTable({ patients }: { patients: Patient[] }) {

@@ -25,7 +25,7 @@ export function AppointmentForm({
   const [endTime, setEndTime] = useState(new Date());
 
   async function create() {
-    let appointment = await createAppointment({
+    const appointment = await createAppointment({
       patientId: +patientId,
       startTime: new Date(startTime),
       endTime: new Date(endTime),
